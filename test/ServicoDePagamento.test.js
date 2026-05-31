@@ -34,4 +34,16 @@ describe('ServicoDePagamento', () => {
         assert.strictEqual(pagamento.codigoBarras, '2222');
     });
 
+    // Teste nagativo
+    it('deve retornar null quando nao existir pagamento', () => {
+
+        const servico = new ServicoDePagamento();
+
+        assert.strictEqual(
+            servico.consultarUltimoPagamento(),
+            null
+        );
+
+    });
+
 });
